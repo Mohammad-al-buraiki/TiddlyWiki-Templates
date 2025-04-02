@@ -1,25 +1,37 @@
-📁 How to Add the “Contents” Tab to Your Sidebar
-To create a dynamic Contents tab that automatically shows linked pages by tag, follow these steps:
 
-🧱 Create a New Tiddler with the Following Settings:
-Tiddler Title:
-Contents (or any name you want — this is what will appear in the sidebar)
+## 📂 How to Create a “Contents” Tab in Your Sidebar
 
-Tag:
-$:/tags/SideBar
+### ✅ Steps to Add a Custom Contents Tab
 
-Body (Tiddler Content):
+1. **Click the plus (+) icon** in the sidebar to create a new tiddler.
 
-html
-Copy
-Edit
-<div class="tc-table-of-contents">
-<<toc-selective-expandable 'Contents' sort[title]>>
-</div>
-Field Name:
-list-before
+2. In the **title field**, name it `Contents` (or anything you want — this name will appear in the sidebar tab).
 
-Field Value:
-$:/core/ui/SideBar/Open
+3. In the **tags field**, add:  
+   ```
+   $:/tags/SideBar
+   ```
 
-✅ Once added and saved, your sidebar will show a new tab named Contents, and any tiddler tagged with Contents will show up listed underneath — including expandable sub-items based on their tags.
+4. In the **body** of the tiddler, paste this code:
+   ```html
+   <div class="tc-table-of-contents">
+   <<toc-selective-expandable 'Contents' sort[title]>>
+   </div>
+   ```
+
+5. Scroll down to the **"Add a new field"** section:  
+   - Field name: `list-before`  
+   - Field value: `$:/core/ui/SideBar/Open`  
+   Then click **Add**.
+
+6. **Click the checkmark (✓)** in the top right to save the tiddler.
+
+---
+
+### 📌 How It Works
+
+- The new sidebar tab will appear as `Contents`.  
+- Any tiddler tagged with `Contents` will automatically appear in the list.  
+- If those tiddlers have their own tags, they will be expandable sub-items.
+
+---
